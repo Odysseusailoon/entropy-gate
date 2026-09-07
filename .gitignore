@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.egg-info/
+runs/
+rfcs/outcome-compression/
+*.swp
+*.swo
+.DS_Store

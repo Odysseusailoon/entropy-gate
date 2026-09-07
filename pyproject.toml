@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "entropy-gate-sample"
+version = "0.2.0"
+description = "Reproducible entropy-guided estimation of ordinary rollout answer distributions"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.24,<3", "PyYAML>=6,<7", "torch>=2.6,<3"]
+
+[project.optional-dependencies]
+gpu = ["transformers>=4.51,<5", "datasets>=3,<5", "huggingface-hub>=0.30,<1"]
+analysis = ["matplotlib>=3.8,<4"]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+egs = "egs.net.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["egs*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

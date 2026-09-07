@@ -1,0 +1,6 @@
+# CPU validation / analysis. Install .[gpu] separately on each H200 machine.
+numpy>=1.24,<3
+PyYAML>=6.0,<7
+torch>=2.6,<3
+pytest>=8.0,<10
+matplotlib>=3.8,<4

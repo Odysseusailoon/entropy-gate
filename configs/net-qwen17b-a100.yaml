@@ -1,0 +1,16 @@
+# Debug only: Qwen3-1.7B on A100; not a formal-study model/hardware amendment.
+# Load after net-benefit.yaml to prepare debug prompts. Use egs.net.debug on
+# development questions only. Exact cached commits permit an offline freeze.
+run:
+  name: net-qwen17b-a100-v2
+sampling:
+  max_new_tokens: 4096
+model:
+  name: Qwen/Qwen3-1.7B
+  revision: 70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+  tokenizer_name: Qwen/Qwen3-1.7B
+  tokenizer_revision: 70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+data:
+  revision: 740312add88f781978c0658806c59bc2815b9866
+study:
+  required_gpu_name: A100

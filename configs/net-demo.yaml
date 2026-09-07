@@ -1,0 +1,28 @@
+run:
+  name: net-demo
+  stage: demo
+backend:
+  name: mock
+  batch_size: 8
+sampling:
+  seed_base: 20260907
+  max_new_tokens: 96
+data:
+  n_questions: 3
+  question_offset: 1000
+study:
+  dev_questions: 2
+  dev_replicates: 1
+  candidates: [8, 16, 32, 64, 128]
+  iid_budgets: [16, 32, 64]
+  replicates: 2
+  prefix_tokens: 32
+  bootstrap_samples: 200
+  warmup_rollouts: 1
+  reference_max_samples: 256
+reference:
+  n_ref: 128
+  convergence_grid: [32, 64, 128]
+  convergence_js_threshold: 0.05
+checks:
+  require_manual_review: false
